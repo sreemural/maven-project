@@ -5,7 +5,9 @@ pipeline {
             agent { docker 'maven:3.9.0-eclipse-temurin-11' } 
             steps {
                 echo 'Hello, Maven'
-                sh 'mvn --version'
+                sh 'mvn --version' 
+                sh 'mvn clean install'
+                sh 'ls'
             }
         }
         stage('Example Test') {
